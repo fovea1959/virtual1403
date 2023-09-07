@@ -131,20 +131,21 @@ func (s *scanner) emitLine(linefeed bool) {
 			r = '¢'
 		case 0xd7:
 			r = '|'
+			r = '─'
 		case 0x9b:
 			r = '^'
 		case 0x9f:
 			r = '©'
-		case 0xf6:
-			r = '+' // UL corner
+		case 0xd0:
+			r = '┌' // UL corner
 		case 0xbf:
-			r = '-'
+			r = '─'
 		case 0xa8:
-			r = '+' // LL corner
-		case 0xbc:
-			r = '+' // UR corner
+			r = '└' // LL corner
+		case 0xaf:
+			r = '┐' // UR corner
 		case 0xb3:
-			r = '+' // LR corner
+			r = '┘' // LR corner
 		default:
 			if s.curline[i] > 0x7F {
 				log.Printf(
